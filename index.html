@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			#game {
+				transform: translate(-50%,-50%);
+				left: 50%;
+				top: 50%;
+				position: absolute;
+				width:  100vw;
+				height: 75vw;
+				max-width: 133vh;
+				max-height: 100vh;
+				background-color: white;
+				image-rendering: pixelated;
+			}
+			body {
+				background-color: black;
+				overflow: hidden;
+			}
+			#tooltip {
+				position: absolute;
+				display: block;
+				left: 5px;
+				top: 5px;
+				background-color: floralwhite;
+				border-width: 2px;
+				border-style: solid;
+				padding: 5px;
+			}
+		</style>
+	</head>
+	<body oncontextmenu="return false;">
+		<canvas id="game" width="320" height="240"></canvas>
+		<div id="tooltip">Tooltips appear here!</div>
+		<script src="publicEditor.js"></script>
+	</body>
+</html>
