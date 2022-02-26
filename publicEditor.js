@@ -155,11 +155,12 @@ function updateLevelPlaying(levelToUpdate) {
 			} else if(tile === 1) {
 				levelPlayingBuffer[playerMoveTo.y][playerMoveTo.x] = 2;
 				var possibilities = [
-					{x:-1,y:-1},{x:-1,y:0},{x:-1,y:1},
-					{x:0,y:-1},            {x:0,y:1},
-					{x:1,y:-1}, {x:1,y:0}, {x:1,y:1},
+					{x:-1,y:-1},{x:0,y:-1},{x:1,y:-1},
+					{x:-1,y:0},            {x:1,y:0},
+					{x:-1,y:-1}, {x:0,y:1},{x:1,y:1},
 				];
-				for(var i = 0; i < possibilities.length; i++) {
+				var len = possibilities.length;
+				for(var i = 0; i < len; i++) {
 					var x = possibilities.splice(randInt(0,possibilities.length),1)[0];
 					if(pushBall(x.x,x.y)) {
 						break;
