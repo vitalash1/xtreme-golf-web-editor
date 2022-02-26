@@ -180,6 +180,10 @@ function updateLevelPlaying(levelToUpdate) {
 						if(levelPlayingBuffer[i][j] === 7) {
 							alert("You Lost (calculator destroyed)");
 						}
+						//dont destroy goal
+						if(levelPlayingBuffer[i][j] === 4) {
+							continue;
+						}
 						levelPlayingBuffer[i][j] = 0;
 					}	
 				}
