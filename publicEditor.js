@@ -116,7 +116,9 @@ function getLevelPosition() {
 	return {x:canvas.width/2 - (levelSize*tileSize)/2,y:canvas.height/2 - (levelSize*tileSize)/2,width:levelSize*tileSize,height:levelSize*tileSize}
 }
 function getTileSelectorPosition() {
-	return {x:5,y:5,width:tileSize/2,height:tileSize/2*(tileTypes[tileTypes.length-1].end+1)};
+	var height = tileSize/2*(tileTypes[tileTypes.length-1].end+1);
+	var width = tileSize/2;
+	return {x:getLevelPosition().x/2-width/2,y:canvas.height/2 - height/2,width,height};
 }
 
 function collision(x,y,w,h,x2,y2,w2,h2) {
@@ -179,6 +181,7 @@ function updateLevelPlaying(levelToUpdate) {
 					for(var j = Math.max(0,playerMoveTo.x - 1); j < Math.min(levelSize,playerMoveTo.x+2); j++) {
 						if(levelPlayingBuffer[i][j] === 7) {
 							alert("You Lost (calculator destroyed)");
+							togglePlay();
 						}
 						//dont destroy goal
 						if(levelPlayingBuffer[i][j] === 4) {
